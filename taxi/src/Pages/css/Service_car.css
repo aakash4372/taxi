@@ -1,0 +1,98 @@
+
+/* Or orange */
+.service-section {
+  background-color: #e38b00; /* light orange */
+  padding: 40px 20px;
+  border-radius: 12px;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image wrapper */
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #efa32ab0;
+}
+
+.car-image,
+.hover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Hide hover image initially */
+.hover-image {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* 🔥 Change: target hover on the card instead of the image wrapper */
+.service-card:hover .hover-image {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.service-card:hover .car-image {
+  opacity: 0;
+}
+
+/* Title & Text */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Link */
+.estimate-link {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.estimate-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .card-img-wrapper {
+    height: 180px;
+  }
+  .card-title {
+    font-size: 1.15rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+}

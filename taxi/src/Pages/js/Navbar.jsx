@@ -33,7 +33,7 @@ const NavbarSection = () => {
       <Navbar
         expand="lg"
         fixed="top"
-        className={`transition-all duration-500 ${scrolled ? 'bg-white shadow-md py-2' : 'glass-navbar py-3'}`}
+        className={`transition-all duration-500 ${scrolled ? 'bg-white shadow-md' : 'glass-navbar'}`}
       >
         <Container>
           {/* Logo */}
@@ -69,7 +69,7 @@ const NavbarSection = () => {
             onClick={() => setShowOffcanvas(true)}
             aria-label="Open navigation menu"
           >
-            <Bars3Icon className={`h-6 w-6 ${scrolled ? 'text-gray-700' : 'text-gray-700'}`} />
+            <Bars3Icon className={`h-8 w-8 ${scrolled ? 'text-gray-700' : 'text-gray-700'}`} />
           </Button>
         </Container>
       </Navbar>

@@ -170,39 +170,129 @@
     padding: 1rem !important;
   }
 } */
-
-
 .homepage-container {
-    position: relative;
-    height: 90vh; /* Full viewport height */
-    background-image: url('/img/home3.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  height: 90vh;
+  background-image: url('/img/home3.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.675);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.content h1,
+.content p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.893);
+}
+
+/* Custom button styles */
+.btn-outline-secondary {
+  color: white;
+  border-color: white;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.5rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f39e00;
+  color: white;
+  border-color: #ffa500;
+}
+
+/* ---------- Media Queries ---------- */
+
+/* Phones */
+@media (max-width: 576px) {
+  .homepage-container {
+    height: 80vh;
+    background-position: center;
   }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.507); /* Light black overlay (50% opacity) */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .content h1 {
+    font-size: 1.7rem;
   }
-  
-  .content {
-    max-width: 800px;
-    padding: 20px;
-  }
-  
-  /* Ensure text is readable */
-  .content h1,
+
   .content p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional: subtle shadow for better readability */
+    font-size: 1rem;
   }
+
+  .content {
+    padding: 10px;
+  }
+
+  .btn-outline-secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .homepage-container {
+    height: 85vh;
+  }
+
+  .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .content p {
+    font-size: 1.1rem;
+  }
+
+  .btn-outline-secondary {
+    font-size: 1rem;
+    padding: 0.55rem 1.2rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 769px) and (max-width: 992px) {
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.15rem;
+  }
+
+  .btn-outline-secondary {
+    font-size: 1.05rem;
+    padding: 0.6rem 1.4rem;
+  }
+}
+
+/* Desktops */
+@media (min-width: 993px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1.25rem;
+  }
+
+  .btn-outline-secondary {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

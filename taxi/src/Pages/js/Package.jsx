@@ -1,58 +1,46 @@
 import React from 'react';
-import { Card, Button, Container, Row, Col } from 'react-bootstrap';
-import { 
-  FaTaxi, 
-  FaRoute, 
-  FaBlog 
-} from 'react-icons/fa';
-import '../css/Packages.css';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { SlNote } from "react-icons/sl";
+import { RiRoadMapLine } from "react-icons/ri";
+import { BsTaxiFront } from "react-icons/bs";
+import '../css/Packages.css'; // Custom styles if needed
 
-const Packages = () => {
-  const services = [
-    {
-      title: "Outstation Oneway Taxi",
-      description: "Get Estimate & Booking.",
-      variant: "primary",
-      icon: <FaTaxi size={40} />
-    },
-    {
-      title: "Outstation Round Trip",
-      description: "Get Estimate & Booking.",
-      variant: "success",
-      icon: <FaRoute size={40} />
-    },
-    {
-      title: "Blogging Tour Packages",
-      description: "Get Estimate & Booking.",
-      variant: "info",
-      icon: <FaBlog size={40} />
-    }
-  ];
+const services = [
+  {
+    icon: <BsTaxiFront size={40} />, // Font Awesome icon for one-way taxi
+    title: 'Outstation Oneway Taxi',
+    subtitle: '',
+    link: 'https://www.taxirider.in/',
+  },
+  {
+    icon: <RiRoadMapLine size={40} />, // Font Awesome icon for round trip
+    title: 'Outstation Round Trip',
+    subtitle: '',
+    link: 'https://www.taxirider.in/',
+  },
+  {
+    icon: <SlNote size={40} />, // Font Awesome icon for blogging
+    title: 'Blogging',
+    subtitle: 'Tour Packages',
+    link: 'https://www.taxirider.in/',
+  },
+];
 
+const ServiceCards = () => {
   return (
-    <Container className="packages-section py-5">
+    <Container className="py-5">
       <Row className="g-4">
         {services.map((service, index) => (
-          <Col key={index} md={4}>
-            <Card className="h-100 shadow-sm border-0 package-card">
-              <Card.Body className="text-center p-4">
-                <div className="package-icon mb-3">
-                  {service.icon}
-                </div>
-                <Card.Title as="h3" className="mb-3 fw-bold">
-                  {service.title}
-                </Card.Title>
-                <Card.Text className="mb-4">
-                  {service.description}
-                </Card.Text>
-                <Button 
-                  variant={service.variant} 
-                  size="lg"
-                  className="px-4 py-2 rounded-pill"
-                >
-                  Book Now
-                </Button>
-              </Card.Body>
+          <Col key={index} xs={12} md={4} className="text-center">
+            <Card className="border-0 service-card">
+              <div className="icon-wrapper mb-3">
+                {service.icon} {/* Render the icon here */}
+              </div>
+              <h5>{service.title}</h5>
+              {/* {service.subtitle && <p className="text-muted">{service.subtitle}</p>} */}
+              <a href={service.link} className="text-primary fw-semibold">
+                Get Estimate & Booking. <span role="img" aria-label="pointer">👈</span>
+              </a>
             </Card>
           </Col>
         ))}
@@ -61,4 +49,4 @@ const Packages = () => {
   );
 };
 
-export default Packages;
+export default ServiceCards;
